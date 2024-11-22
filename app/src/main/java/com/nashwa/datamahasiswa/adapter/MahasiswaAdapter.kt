@@ -58,7 +58,7 @@ class MahasiswaAdapter(
             // Tampilkan dialog konfirmasi
             AlertDialog.Builder(holder.itemView.context).apply {
                 setTitle("Konfirmasi")
-                setMessage("Apakah anda ingin melanjutkan ?")
+                setMessage("Apakah anda yakin ingin menghapus ${mhs2.nama}?")
                 setIcon(R.drawable.baseline_delete_24)
 
                 setPositiveButton("Yakin") { dialogInterface, _ ->
@@ -67,7 +67,7 @@ class MahasiswaAdapter(
                     // Refresh data di adapter
                     refreshData(db.getAllMahasiswa())
 
-                    Toast.makeText(holder.itemView.context, "Data berhasil dihapus", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(holder.itemView.context, "Data ${mhs2.nama} berhasil dihapus", Toast.LENGTH_SHORT).show()
 
                     dialogInterface.dismiss()
                 }
